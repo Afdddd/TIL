@@ -39,14 +39,14 @@
 그럼 WAS가 웹 서버의 기능을 할 수 있으면 WAS만 사용하면 되는거 아닌가? 라고 생각이 들것이다.
 
 
-![WebServer](/img/Web_Server.png)
+![WebServer](/Web/img/Web_Server.png)
 
 맞다. WAS만 사용할수있다. 하지만 WAS가 정적인 페이지도 제공하고 코드를 실행해서 동적인 페이지도 제공한다면 WAS가 너무 많은일을 처리하게 된다. 그래서 웹 서버를 WAS 앞단에 배치해 웹 서버에서 우선적으로 클라이언트 요청을 받아 정적 리소스를 처리하고 서블릿, jsp 같은 동적 리소스가 필요한 요청은 WAS로 전달한다.
 
-![WAS](/img/WAS.png)
+![WAS](/Web/img/WAS.png)
 
 사용자의 요청이 많아지면 여러대의 WAS를 사용해 요청을 분산 시켜 처리할 수 있다. 이런 걸 로드밸런싱이라 한다.
 
-![Load_Balancer](/img/Load_Balancer.png)
+![Load_Balancer](/Web/img/Load_Balancer.png)
 
 웹 서버와 WAS에 대해 알아봤다. 다음은 Jsp와 Servlet으로 요청을 어떻게 처리하는지에 대해 알아보자.
