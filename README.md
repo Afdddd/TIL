@@ -3,4 +3,4 @@ Today I Learned
 
 ---
 ## WEB
-- [Web이란?](Web/WAS란.md)
+- [WAS란?](Web/WAS란.md)
