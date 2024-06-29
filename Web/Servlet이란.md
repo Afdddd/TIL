@@ -268,28 +268,33 @@ HttpServletRequest 객체로 요청으로 온 파라미터 데이터를 꺼낼�
 <br>
 
 ![Untitled](/Web/img/Servlet(1).png)
+
 서블릿이 생성되었으니 init()이 호출되었고 url로 접근했으니 doGet()이 호출되어 화면을 출력할것이다.
 <br>
 
 
 ![Untitled](/Web/img/Servlet(2).png)
+
 정상적으로 화면이 출력되었다.
 데이터를 입력하고 Click을 눌러 데이터를 전송하면 
 <br>
 
 
 ![Untitled](/Web/img/Servlet(3).png)
+
 WAS가 form태그의 action 속성과 method 타입 확인해 서블릿을 찾아 응답한다.
 post로 지정해줬기 때문에 doPost()가 호출된다.
 <br>
 
 
 ![Untitled](/Web/img/Servlet(4).png)
+
 마찬가지로 정상적으로 요청을 처리했다.
 <br>
 
 
 ![Untitled](/Web/img/Servlet(5).png)
+
 마지막으로 서버를 끄면 라이프사이클의 마지막인 detroy()가 호출된다.
 
 <br>
