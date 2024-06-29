@@ -260,9 +260,9 @@ HttpServletRequest 객체로 요청으로 온 파라미터 데이터를 꺼낼�
 
 이제 실행해 보자
 
-(http://localhost:8088/servlet/hello) 우리가 설정파일에 등록해준 서블릿으로 요청을 보내보자
-우리가 요청 (http://localhost:8088/servlet/hello)을 하면 WAS가 설정 파일에 등록된 서블릿을 찾는다.  
-기본적으로 url로 접근하면 Get방식이다.
+서버를 실행하고 우리가 설정파일에 등록해준 서블릿으로 요청을 보내보자
+우리가 요청(http://localhost:8088/servlet/hello) 을 하면 WAS가 URL을 분석해 설정 파일에 등록된 서블릿을 찾는다.  
+기본적으로 URL로 접근하면 Get방식이다.
 그럼 WAS가 우리가 등록한 HelloServlet의 인스턴스를 생성하고 라이프 사이클이 동작할것이다.
 
 <br>
