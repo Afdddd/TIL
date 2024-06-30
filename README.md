@@ -14,5 +14,6 @@ Today I Learned
 <br>
 
 ## CS
-- [IEEE754표준이란 ?]()
+- [IEEE754표준이란 ?](CS/IEEE754표준이란.md)
+
 
