@@ -11,6 +11,7 @@ Today I Learned
 ## Java
 - [GC란?](Java/GC란.md)
 - [HashMap동작방식](/Java/HashMap의%20동작방식.md)
+- [Generic이란](/Java/Generic이란.md)
 
 <br>
 
