@@ -6,6 +6,7 @@ Today I Learned
 - [WAS란?](Web/WAS란.md)
 - [Servlet이란?](Web/Servlet이란.md)
 - [Jsp란?](Web/Jsp란.md)
+- [MVC패턴이란?](Web/MVC패턴이란.md)
 
 <br>
 
