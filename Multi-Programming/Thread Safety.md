@@ -149,7 +149,7 @@ synchronized(this){
 ```
 
 여기서 this는 lock이다. 모든 객체는 하나의 고유 락을 가지고 있다.
-해당 인스턴스의 설정된 임게영역에 접근하기 위해선 해당 인스턴스의 락을 가지고 들어간다 라고 생각하자
+해당 인스턴스의 설정된 임계영역에 접근하기 위해선 해당 인스턴스의 락을 가지고 들어간다 라고 생각하자
 
 
 <br>
@@ -241,7 +241,7 @@ public synchronized boolean getFlag() {
 
 Atomic  타입은 CAS라는 알고리즘을 사용해 원자성과 Non-Blocking을 구현하고 내부에서 `volatile` 키워드를 사용해 가시성도 확보해 Thread Safety하게 해준다.
 
-Non-Blocking이란 Thread1이 methodA를 수행하고 있더라도 Thread2가 동일한 methodA를 수행할 수 있음을 의미한다.
+Non-Blocking이란 Thread1이 methodA를 수행하고 있더라도 Thread2가 동일한 methodA를 기다리지 않고 수행할 수 있음을 의미한다.
 
 CAS(Compare And Swap 또는 Comapare And Set) 알고리즘은 자원값, 기대값, 새로운 값 세 개의 인수가 필요하다.
 
@@ -249,10 +249,10 @@ CAS(Compare And Swap 또는 Comapare And Set) 알고리즘은 자원값, 기대�
 
 기대값 : 현재 값이 이 값과 같은지 비교할 값
 
-새로운 값 : 자원값과 기대값이 일치할 때 설정할 값
+새로운 값 : 현재값과 기대값이 일치할 때 설정할 값
 
-1. Thread1이 `methodA`를 수행 중 일 때 Thread2도 methodA를 수행한다.
-2. Thread2는 현재값을 복사해 기대값을 가지고 연산을 수행한다. 
+1. Thread1이 `methodA`를 수행 중 일 때 Thread2도 `methodA`를 수행한다.
+2. Thread2는 현재값(메모리에 저장된 값)을 복사해 기대값에 저장하고 연산을 수행한다. 
 3. Thread2가 연산을 마치고 값을 저장할때 현재값과 기대값을 비교해 같으면 새로운값을 적용한다.
 4. 만약 현재값과 기대값이 다르면 false를 반환한다.
 
@@ -315,7 +315,7 @@ public class CASExample {
 
 대표적으로 `AtomicBoolean`, `AtomicInteger`, `AtomicReference`가 있다
 
-Java는 동시성 문제를 다양한 방법으로 해결할 수 있는다. 글에서 설명한 synchronized, volatile, atomic 외 에도 각 스레드별로 고유한 데이터를 유지하고 관리하는 Thread Local과 동기화된 컬렉션 프레임 워크인 Synchronized Collection과 Current Collection이라는 다양한 방식을 제공해준다. 어떤 기술을 사용해 동기화 문제를 해결하는 지는 개발자의 몫이다. 요구사항과 성능을 고려하여 적절한 기술을 선택하는 것이 중요하다.
+Java는 동시성 문제를 다양한 방법으로 해결할 수 있다. 글에서 설명한 synchronized, volatile, atomic 외 에도 각 쓰레드 별로 고유한 데이터를 유지하고 관리하는 Thread Local과 동기화된 컬렉션 프레임 워크인 Synchronized Collection과 Concurrent Collection이라는 다양한 방식을 제공해준다. 어떤 기술을 사용해 동기화 문제를 해결하는 지는 개발자의 몫이다. 요구사항과 성능을 고려하여 적절한 기술을 선택하는 것이 중요하다.
 
 
 
