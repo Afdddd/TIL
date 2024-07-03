@@ -206,6 +206,11 @@ Java에서는 불변성을 확보할 수 있도록 final 키워드를 제공하�
 final List<String> list = new ArrayList<>();
 list.add("a");
 ```
+>참고로 써놓는데 위에 같은 경우에 final이 하는 역할은 아래의 코드처럼
+```
+list = new ArrayList<>();
+```
+>새로이 list에 참조하는 객체를 생성할 수 없다는 얘기다
 
 - 혹시 왜 list는 가변이고 String은 불변인지 궁금한사람 ??
     
