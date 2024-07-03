@@ -92,14 +92,14 @@ HTTP는 무상태(Stateless) 구조로 서버가 클라이언트의 상태를 �
 
 ### JWT 구조
 
-![출처: [https://jwt.io/]](/web/img/jwt(1).png)
+![Untitle](/Web/img/jwt(1).png)
 JWT는 Header, Payload, Signature로 구성되었다.
 
 <br>
 
 **Header**
 
-![출처: [https://jwt.io/]](/web/img/jwt(2).png)
+![Untitle](/Web/img/jwt(2).png)
 
 > Header는 Signature를 해싱하기 위한 정보를 담고있다.
 > 
@@ -110,7 +110,7 @@ JWT는 Header, Payload, Signature로 구성되었다.
 
 **Payload**
 
-![](/web/img/jwt(3).png)
+![](/Web/img/jwt(3).png)
 
 > 서버와 클라이언트가 주고받는 실제 데이터를 담고있다.
 
@@ -118,7 +118,7 @@ JWT는 Header, Payload, Signature로 구성되었다.
 
 **Signature**
 
-![출처: [https://jwt.io/]](/web/img/jwt(4).png)
+![출처: [https://jwt.io/]](/Web/img/jwt(4).png)
 
 > 토큰의 유효성을 검증을 위한 문자열을 담고있다.
 
@@ -138,7 +138,7 @@ base64는 문자들을 base64형태(ASCII)로 변환하여 전송하고 받는�
 
 ### 토큰 인증 과정
 
-![출처:[https://docs.intersystems.com/irislatest/csp/docbook/DocBook.UI.Page.cls?KEY=GAUTHN_jwt]](/web/img/jwt(5).png)
+![](/Web/img/jwt(5).png)
 
 1. 클라이언트가 서버에 로그인 요청(ID, password)
 2. 서버측에서 인증 요청이 오면 암호화된 JWT를 생성해 쿠키에 담아 클라이언트에게 응답한다.
