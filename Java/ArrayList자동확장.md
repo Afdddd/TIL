@@ -245,33 +245,3 @@ public void trimToSize() {
 
 ⇒ `elementData` 참조를 새로운 배열로 변경하여, 불필요한 메모리를 해제!!하는거죠!!
 
-
-<mark><b>3️⃣ 대안 자료 구조 사용</b></mark>
-
-**LinkedList**: 빈번한 삽입 및 삭제가 필요한 경우 `LinkedList`가 더 효율적입니다.
-
-<aside>
-💡 **LinkedList**: 노드 기반의 자료 구조로, 각 요소는 노드로 저장되며, 
-삽입 및 삭제 시 연결된 노드의 포인터만 변경됩니다.
-
-</aside>
-
-Linked List는 Array List와는 다르게 엘리먼트와 엘리먼트 간의 연결(link)을 이용해서 리스트를 구현
-
-ArrayList는 값의 삽입, 삭제가 빈번하면 뒤의 자료구조 위치를 전부 이동해야 하지만,
-
-LinkedList는 서로 연결된 next 값만 변경해주면 돼서 훨씬 빠르다.
-
-![Untitled](ArrayList%20%E1%84%8C%E1%85%A1%E1%84%83%E1%85%A9%E1%86%BC%E1%84%92%E1%85%AA%E1%86%A8%E1%84%8C%E1%85%A1%E1%86%BC%20f2b0dbe8ab4547698ee874ed5f686790/Untitled%202.png)
-
-**HashMap / HashSet**: 요소의 고유성을 유지하면서 빠른 삽입 및 검색이 필요한 경우 `HashMap`이나 `HashSet`이 더 효율적입니다.
-
-<aside>
-💡 **HashMap / HashSet**: 해시 테이블 기반의 자료 구조로, 
-빠른 검색과 삽입을 위해 요소가 해시 테이블에 저장됩니다.
-
-</aside>
-
-1. 
-2. 
-3. **적절한 크기 증가율 설정**: 기본적으로 1.5배로 증가하지만, 용량 증가율을 보다 세밀하게 조정할 수 있습니다. 예를 들어, 직접 커스텀한 `ArrayList`를 구현하여 필요에 따라 다른 증가 전략을 사용할 수 있습니다.
