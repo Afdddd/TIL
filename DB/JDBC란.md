@@ -14,7 +14,7 @@ JDBC란 (Java DataBase Connectivity) 자바에서 데이터베이스에 접속�
 
 ## JDBC 드라이버
 
-![h2 데이터베이스의 JDBC 드라이버](/DB/img/jdbc(2).png)
+![h2 데이터베이스의 JDBC 드라이버](/DB/img/jdbc(2).png)<br>
 h2 데이터베이스의 JDBC 드라이버
 인터페이스만 있다고 기능이 동작하지 않는다.
 
@@ -122,28 +122,68 @@ H2 데이터베이스 드라이버가 제공하는 H2 전용 커넥션이다. �
 
 Statement란 Connection을 통해 연결된 DB에 SQL문을 전송하고 처리된 결과를 반환하는 객체이다.
 
-<br>
+<br><br>
 
 #### Statement와 PreparedStatement
 
 Statement와 PreparedStatement의 가장 큰 차이점은 캐시(cache)를 사용한다는 점이다.
 
-1. 쿼리 문장 분석
-2. 컴파일
-3. 실행
+![alt text](image.png)
+일반적인 Statement의 경우, 구문 분석(parse)부터 인출(fetch)까지 모든 과정을 매번 수행한다.
+
+
+<br>
+
+![alt text](image-1.png)
+하지만 Prepared Statement의 경우, 구문 분석(parse) 과정을 최초 1회만 수행하여 생성된 결과를 캐시에 저장해 필요할 때마다 사용한다. 또한 SQL구문이 미리 컴파일 되어 사용자 입력값을 변수로 선언해 값을 대입하여 사용한다.
+
+<br>
+
+**Statement**
 
 ```java
 //Statement
-String sql = "select from member where member_id = memberId";
+String memberId = request.getParameter("memberId");
+String sql = "select from member where member_id = " + memberId;
 Statement stmt = con.createStatement();
 ResultSet rs = stmt.executeQuery(sql);
 ```
 
-Statement를 사용하면 매번 쿼리를 실행할때마다 1~3단계를 거치게 된다.
 
 <br>
 
 Statement는 `executeQuery()` 나 `executeUpdate()` 를 실행하는 시점에 SQL문을 전송하는데 무슨 SQL문장이 전송되는지 한눈에 알수있지만 매번 컴파일하기 때문에 성능면에서 떨어진다.
+
+그리고 SQL Injection에 취약하다.
+
+
+```java
+String username = request.getParameter("username");
+String password = request.getParameter("password");
+String query = "SELECT * FROM users WHERE username = '" + username + "' AND password = '" + password + "'";
+Statement stmt = connection.createStatement();
+ResultSet rs = stmt.executeQuery(query);
+
+```
+
+
+
+이렇게 로그인 과정에서 Statement를 사용하면 사용자의 입력이 직접 쿼리에 포함되어 SQL Injection에 취약하다.
+
+<br>
+
+```java
+SELECT * FROM users WHERE username = 'admin' --' AND password = ''
+```
+
+
+예를 들어, 사용자가 username 필드에 admin' --를 입력하면 쿼리는 주석(--)으로 인해 비밀번호 조건을 무시하게 되어, 공격자가 비밀번호 없이 로그인할 수 있게 된다.
+
+
+<br><br>
+
+**PreparedStatement**
+
 
 ```java
 //PreparedStatement
@@ -153,14 +193,28 @@ pstmt.setString(1,memberId);
 ResultSet rs = pstmt.executeQuery();
 ```
 
-PreparedStatement는 1~3단계를 처음 한번만 실행하고 캐시에 담아 재사용한다.
 
-컴파일이 미리 준비되어있기 때문에 Statement보다 성능면에서 뛰어나고 ?를 `setXXX()` 를 통해 
-치환해주며 재사용이 가능하다.
 
-Statement'는 매개변수 없이 정적 SQL 쿼리를 실행하는 데 더 간단하고 적합하지만, 'PreparedStatement'는 보안상의 이점과 잠재적인 성능 향상으로 인해 매개변수화된 SQL 쿼리를 실행하는 데 선호됩니다. 
+컴파일이 미리 준비되어있기 때문에 Statement보다 성능면에서 뛰어나고 ?를 `setXXX()` 를 통해 바인딩 해주기 때문에 SQL Injection을 방지할 수 있다.
 
-<br>
+`setXXX()`를 사용하면 내부적으로 이스케이프 처리를 하기 때문에 특수 문자가 SQL 구문으로 해석되는걸 방지한다.
+
+```java
+String query = "SELECT * FROM users WHERE username = ? AND password = ?";
+PreparedStatement pstmt = connection.prepareStatement(query);
+pstmt.setString(1, "admin");
+pstmt.setString(2, "'password' OR '1'='1'"); //sql injection
+ResultSet rs = pstmt.executeQuery();
+
+```
+이런식으로 SQL Injection을 시도한다면 문자 그대로를 이스케이프 처리하기 때문에 "'password' OR '1'='1'"라는 비밀번호를 찾게 될것이다.
+
+
+
+
+
+
+<br><br>
 
 #### `ExecuteQuery()`
 
@@ -297,3 +351,4 @@ public Member findById(String memberId) throws SQLException {
 <br><br><br><br><br>
 ### Reference
 https://www.inflearn.com/course/%EC%8A%A4%ED%94%84%EB%A7%81-db-1/dashboard
+https://www.fis.kr/ko/major_biz/cyber_safety_oper/attack_info/security_news?articleSeq=2588
