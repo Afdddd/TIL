@@ -128,13 +128,13 @@ Statement란 Connection을 통해 연결된 DB에 SQL문을 전송하고 처리�
 
 Statement와 PreparedStatement의 가장 큰 차이점은 캐시(cache)를 사용한다는 점이다.
 
-![alt text](image.png)
+![alt text](/DB/img/image.png)
 일반적인 Statement의 경우, 구문 분석(parse)부터 인출(fetch)까지 모든 과정을 매번 수행한다.
 
 
 <br>
 
-![alt text](image-1.png)
+![alt text](/DB/img/image-1.png)
 하지만 Prepared Statement의 경우, 구문 분석(parse) 과정을 최초 1회만 수행하여 생성된 결과를 캐시에 저장해 필요할 때마다 사용한다. 또한 SQL구문이 미리 컴파일 되어 사용자 입력값을 변수로 선언해 값을 대입하여 사용한다.
 
 <br>
