@@ -16,7 +16,6 @@ Today I Learned
 - [Jsp란?](Web/Jsp란.md)
 - [MVC패턴이란?](Web/MVC패턴이란.md)
 - [쿠키,세션,JWT](Web/쿠키,세션,JWT.md)
-- [HTTP 메서드](Web/HTTP메서드.md)
 
 <br>
 
@@ -30,6 +29,10 @@ Today I Learned
 
 ## CS
 - [IEEE754표준이란 ?](CS/IEEE754표준이란.md)
+
+## NetWork
+- [Network Topology](/CS/Network%20Topology.md)
+- [HTTP 메서드](Web/HTTP메서드.md)
 
 <br>
 
