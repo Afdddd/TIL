@@ -6,11 +6,12 @@
 - 링
 - 메시
 - 토폴로지의 필요성과 병목현상
-
+<br><br>
 # 1. 네트워크 토폴로지란?
 
 <aside>
-💡 => 노드와 링크가 어떻게 구성되어있는지를 말하며 `버스, 스타, 트리` 등의
+💡 노드와 링크가 어떻게 구성되어있는지를 말하며 
+    <b>버스, 스타, 트리</b> 등의
       토폴로지가 있음.
 
 </aside>
@@ -48,11 +49,9 @@
 
 ### 2. 스타 토폴로지
 
-![Untitled](%E1%84%82%E1%85%A6%E1%84%90%E1%85%B3%E1%84%8B%E1%85%AF%E1%84%8F%E1%85%B3%20%E1%84%90%E1%85%A9%E1%84%91%E1%85%A9%E1%86%AF%E1%84%85%E1%85%A9%E1%84%8C%E1%85%B5%209ebd6357b8464d2e87a0eec7a534ae0f/Untitled.png)
+![Untitled](/CS/img/starTo.png)
 
-✅ 중앙 노드에 각 End-Device를 직접 연결시킨 형태로 방사형(중심에서 바깥으로 뻗어나가는 형태)  
-
-     이라 부르기도 함. 
+✅ 중앙 노드에 각 End-Device를 직접 연결시킨 형태로 방사형(중심에서 바깥으로 뻗어나가는 형태) 이라 부르기도 함. 
 
 특징
 
@@ -63,29 +62,23 @@
 👍 장점
 
 - 중앙노드가 아닌 한 노드에 장애가 발생해도 다른 노드에 영향 X
-- 안정성이 높음. 중앙노드가 아닌 한 노드에 침해가 발생했을 때 다른 노드로
-
-      확장하기가 어렵기 때문. 
-
-      ⇒ 다른 노드로 가려면 중앙노드를 무조건 거쳐야 하고 보통의
-
-           스타토폴로지는 중앙노드의 방화벽 등을 더욱 깐깐하게 해놓음.
+- 안정성이 높음. 중앙노드가 아닌 한 노드에 침해가 발생했을 때 다른 노드로 확장하기가 어렵기 때문. 
+<br> <br> ⇒ 다른 노드로 가려면 중앙노드를 무조건 거쳐야 하고 보통의 스타토폴로지는 중앙노드의 방화벽 등을 더욱 깐깐하게 해놓음.
 
 - 한 링크에 문제가 생겨도 해당 부분만 영향을 받고 나머지 부분은 정상적으로 작동함.
 
 ⛔ 단점
 
 - 중앙노드 에러시 토폴로지 전체가 통신이 되지 않음.
+<Br><br>
 
 ### 3. 트리 토폴로지
 
-![Untitled](%E1%84%82%E1%85%A6%E1%84%90%E1%85%B3%E1%84%8B%E1%85%AF%E1%84%8F%E1%85%B3%20%E1%84%90%E1%85%A9%E1%84%91%E1%85%A9%E1%86%AF%E1%84%85%E1%85%A9%E1%84%8C%E1%85%B5%209ebd6357b8464d2e87a0eec7a534ae0f/Untitled%201.png)
+![Untitled](/CS/img/treeTo.png)
 
 ✅ 최상위에 중앙 컴퓨터를 중심으로 단계적으로 하위, 상위 개념을 계층적으로 적용한 형태
 
-⇒ 통신에 우선순위를 부여 or Backbone 망을 형성하여 데이터의 통신을 트래픽에 따라 최적화 가능.   
-
-    현재는 일반적으로 이 방법을 가장 많이 사용
+⇒ 통신에 우선순위를 부여 or Backbone 망을 형성하여 데이터의 통신을 트래픽에 따라 최적화 가능.  <br><Br>=> 현재는 일반적으로 이 방법을 가장 많이 사용
 
 ✅ 특징
 
@@ -103,17 +96,13 @@
 - 특정 노드 트래픽 집중시 하위노드에 영향
 - 루트노드에 문제가 생기면 전체네트워크에 큰 문제
 
-ex) 백본케이블 : 여러 소형 네트워크들을 묶어 대규모 파이프라인을 통해 극도로 높은
-
-      대역폭으로 다른 네트워크들의 집합과 연결되는 네트워크(대규모 패킷 통신망)
+ex) 백본케이블 : 여러 소형 네트워크들을 묶어 대규모 파이프라인을 통해 극도로 높은 대역폭으로 다른 네트워크들의 집합과 연결되는 네트워크(대규모 패킷 통신망)
 
 ### 4. 링형 토폴로지
 
 ![https://postfiles.pstatic.net/MjAyNDA2MTVfMjYz/MDAxNzE4NDM3ODU1OTk0.AgpYD-V1C002YMwjEfHP-WH0ZLbKq3YqDNJJPDSA9R4g.kiukms2bh_rqpwLtBrWfQjctSalpS4LUqnLkkG8Lui0g.PNG/image.png?type=w580](https://postfiles.pstatic.net/MjAyNDA2MTVfMjYz/MDAxNzE4NDM3ODU1OTk0.AgpYD-V1C002YMwjEfHP-WH0ZLbKq3YqDNJJPDSA9R4g.kiukms2bh_rqpwLtBrWfQjctSalpS4LUqnLkkG8Lui0g.PNG/image.png?type=w580)
 
-✅ Ring형은 인접해 있는 양 옆의 두 노드를 연결하는 
-
-       단방향 전송 형태이다. 
+✅ Ring형은 인접해 있는 양 옆의 두 노드를 연결하는 단방향 전송 형태이다. 
 
 ✅ 특징
 
@@ -130,7 +119,7 @@ ex) 백본케이블 : 여러 소형 네트워크들을 묶어 대규모 파이�
 
 - 링크 또는 노드가 하나만 에러 발생해도 전체 네트워크에 영향
 - 토큰이 없는 노드는 통신에 참여를 못하며 데이터 공유가 안됨.
-
+<Br><Br>
 ### 5. 메시 토폴로지
 
 ![https://postfiles.pstatic.net/MjAyNDA2MTVfMjc1/MDAxNzE4NDM3ODY5Mjcx.Wi5G9QragEVszeuReChe1e4Z_x4kjeKuNDaLnK3FZLEg.3HaT_NY3I7gTKHvPfU_4IJuv0klkrAJr-ukDP_q7XaIg.PNG/image.png?type=w580](https://postfiles.pstatic.net/MjAyNDA2MTVfMjc1/MDAxNzE4NDM3ODY5Mjcx.Wi5G9QragEVszeuReChe1e4Z_x4kjeKuNDaLnK3FZLEg.3HaT_NY3I7gTKHvPfU_4IJuv0klkrAJr-ukDP_q7XaIg.PNG/image.png?type=w580)
@@ -145,9 +134,7 @@ ex) 백본케이블 : 여러 소형 네트워크들을 묶어 대규모 파이�
 
 👍 장점
 
-- 안정성이 높음. 한 노드가 장애가 나도 다른 경로를 이용하여
-
-        다른 노드에 영향을 미치지 않음
+- 안정성이 높음. 한 노드가 장애가 나도 다른 경로를 이용하여 다른 노드에 영향을 미치지 않음
 
 - 트래픽을 분산할 수 있음.
 
@@ -156,6 +143,7 @@ ex) 백본케이블 : 여러 소형 네트워크들을 묶어 대규모 파이�
 - 회선이 비효율적으로 많기 때문에 구축비용이 고가임
 
 ⇒ 중요한 회선이 아니면 매우 비싸서 잘 사용 x 
+<br><br><br>
 
 # 토폴로지의 필요성
 
@@ -177,20 +165,13 @@ ex) 백본케이블 : 여러 소형 네트워크들을 묶어 대규모 파이�
 
 ![https://postfiles.pstatic.net/MjAyNDA2MTVfODkg/MDAxNzE4NDQxNzcyNjMx.cALfhX_T2ER32cemC5k4MVTHuyUkhcha7cr6e2XxQMYg.3Eksn0XlZp_0TbOyzb8foW_CZ885QsZmrK13wC-2cWgg.PNG/image.png?type=w580](https://postfiles.pstatic.net/MjAyNDA2MTVfODkg/MDAxNzE4NDQxNzcyNjMx.cALfhX_T2ER32cemC5k4MVTHuyUkhcha7cr6e2XxQMYg.3Eksn0XlZp_0TbOyzb8foW_CZ885QsZmrK13wC-2cWgg.PNG/image.png?type=w580)
 
-구축된 시스템의 토폴로지를 알고 있다면 어떠한 부분에 어떠한 회선 또는 어떠한 서버의 용량을 증가시켜야하는지 알 수 있습니다.
+구축된 시스템의 토폴로지를 알고 있다면 어떠한 부분에 어떠한 회선 또는 어떠한 서버의 용량을 증가시켜야하는지 알 수 있음.!!
 
-위 사진을 보면, 웹서버와 db 그리고 사용자가 연결!!
+위 사진을 보면, 웹서버와 db 그리고 사용자가 연결되어 있자나요.
 
 트래픽이 많아져서 서버가 다운되면
 
-1 .자원량 체크 => 웹서버나 db 스팩 늘리기 , 
+>자원량 체크 => 웹서버나 db 스팩 늘리기 ,  메모리 8에서 30gb로 >늘리기
+>가 있지만, <br>
 
-     메모리 8에서 30gb로 늘리기
-
-가 있지만,
-
-이런방법보다는 회선을 늘려서
-
-노드와 링크가 어떻게 구성되어있는지 포폴로지를 확인해서
-
-병목현상을 해결하는 방안 중 하나가 될 수 있다는 것.
+이런방법보다는 회선을 늘려서 노드와 링크가 어떻게 구성되어있는지 토폴로지를 확인해서, `병목현상을 해결`하는 `방안 중 하나`가 될 수 있다는 것.
