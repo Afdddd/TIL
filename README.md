@@ -33,7 +33,8 @@ Today I Learned
 <br>
 
 ## NetWork
-- [Network Topology](/CS/Network%20Topology.md)
+- [Network Basic(처리량,트래픽,대역폭,RTT)](/Network/Network%20Basic.md)
+- [Network Topology](/Network/Network%20Topology.md)
 - [HTTP 메서드](Web/HTTP메서드.md)
 
 <br>
