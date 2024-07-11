@@ -358,6 +358,20 @@ HikariCP에서는 `maximumPoolSize` 와 `minimumIdle`을 같은값으로 설정�
 
 Connection Pool의 설정들은 동시 접속 수가 많은 대규모 웹 애플리케이션의 성능 튜닝할때에 사용된다. 접소 수 가 많아지면 DB의 `max_connections`를 충분히 높게 설정하여 모든 사용자가 필요한 만큼의 연결을 할당받을 수 있도록 하고 동시에, `maximumPoolSize` 값을 적절히 조절하여 HikariCP의 커넥션 풀에서 관리되는 커넥션 수를 최적화할 수 있다.
 
+<br>
+
+### 적절한 pool size
+
+HikariCP 공식 가이드에서 제공해주는 적절한 pool size를 구하는 공식이다.
+
+<br>
+
+> pool size = Tn x (Cm - 1) + 1
+
+<br>
+
+Tn은 쓰레드의 최대 개수를, Cm은 동시에 사용하는 커넥션의 최대 개수를 나타낸다.
+
 
 <br><br>
 <br><br>
