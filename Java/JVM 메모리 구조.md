@@ -143,7 +143,8 @@ Class Loader ↔ Execution Engine ↔ Runtime Data Area
           ⇒ 클래스 변수들을 적절한 값으로 초기화.
     
     ⇒이러한 과정을 거친 .class 파일들이 Runtime Data Area에 올라가게 됩니다. 
-    <br><br>
+
+<br>
 
 ## ⭐실행 엔진 (Execution Engine)
     
@@ -272,7 +273,7 @@ Class Loader ↔ Execution Engine ↔ Runtime Data Area
 
 ![스크린샷 2024-06-26 오전 12.11.21.png](/Java/img/JVM(5).png)
 
-이에 대한 얘기는 - [GC란?](Java/GC란.md) => 에 있습니당. 
+이에 대한 얘기는 - [GC란?](/Java/GC란.md) => 에 있습니당. 
 여기는 간단하게 할게요.
 
     ⭐ New/Young : 생명 주기가 짧은 객체를 GC 대상으로 하는 영역
