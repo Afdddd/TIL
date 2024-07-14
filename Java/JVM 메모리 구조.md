@@ -63,6 +63,7 @@ JVM의 실행 부분은 빨간 박스 부분인,
 ```
 
 </aside>
+<br>
 
 # 3️⃣ JVM의 구조
 
@@ -77,26 +78,22 @@ Class Loader ↔ Execution Engine ↔ Runtime Data Area
 
 ## ⭐클래스 로더(Class Loader)
     
-    <aside>
-    💡 Class Loader
-    ✅ 역할 : JVM내로 클래스 파일을 동적으로 로드하고, 
-                    링크를 통해 배치하는 작업을 수행하는 모듈
+💡 Class Loader
+
+    ✅ 역할 : JVM내로 클래스 파일을 동적으로 로드하고, 링크를 통해 배치하는 작업을 수행하는 모듈
+    ⇒ 즉, 로드된 바이트 코드(.class)들을 엮어서 JVM의 메모리 영역인 Runtime Data Areas에 배치. 
     
-         ⇒ 즉, 로드된 바이트 코드(.class)들을 엮어서 JVM의 메모리 영역인 
-              Runtime Data Areas에 배치. 
+    * 클래스를 메모리에 올리는 로딩 기능은 한 번에 메모리에 올리지 않고, 어플리케이션에서 필요한 경우 동적으로 메모리에 적재.
     
-    * 클래스를 메모리에 올리는 로딩 기능은 한 번에 메모리에 올리지 않고, 
-       어플리케이션에서 필요한 경우 동적으로 메모리에 적재.
-    - 컴파일타임이 아닌 **런타임에 클래스 파일을 참조 ***
+    - 컴파일타임이 아닌 *런타임에 클래스 파일을 참조*
+
     
-    </aside>
-    
-    ![클래스로더 사진.png](/Java/img/JVM(2).png)
+![클래스로더 사진.png](/Java/img/JVM(2).png)
     =>김인엽님이 그림
     
     ✅ class loader 종류
     
-    <mark>1. **부트스트랩 클래스 로더(Bootstrap Class Loader)**: </mark>
+<mark>1. **부트스트랩 클래스 로더(Bootstrap Class Loader)**: </mark>
     
     JVM 시작 시 `가장 최초로 실행되는 클래스 로더`입니담. 
     `부트스트랩 클래스 로더`는 자바 클래스를 로드하는 것이 아닌, 자바 클래스를 로드할 수 있는 자바 자체의 클래스 로더와 최소한의 자바 클래스(java.lang.Object, java.lang.Class, java.lang.ClassLoader, java.util.* 등)들을 로드합니다.
@@ -106,7 +103,7 @@ Class Loader ↔ Execution Engine ↔ Runtime Data Area
     - Java 9 이후
         - 더 이상 /re.jar이 존재하지 않으며, /lib 내에 모듈화되어 포함됐다. 이제는 정확하게 ClassLoader 내 최상위 클래스들만 로드한다.
 
-    <mark>2. **확장 클래스 로더(Extension Class Loader)**: </mark>
+<mark>2. **확장 클래스 로더(Extension Class Loader)**: </mark>
     
     `확장 클래스 로더`는 부트스트랩 클래스 로더를 부모로 갖는 클래스 로더로서, 확장 자바 클래스들을 로드합니다. java.ext.dirs 환경 변수에 설정된 디렉토리의 클래스 파일을 로드하고, 이 값이 설정되어 있지 않은 경우 ${JAVA_HOME}/jre/lib/ext 에 있는 클래스 파일을 로드합니다.
     
@@ -118,15 +115,15 @@ Class Loader ↔ Execution Engine ↔ Runtime Data Area
     Java 11 기준으로, 확장 클래스 로더(Platform Class Loader)가 로딩하는 클래스들은 [해당 페이지에 있는 클래스들](https://docs.oracle.com/en/java/javase/11/docs/api/index.html)과 같습니다. <br><br>
     
     
-    <mark>3. **애플리케이션 클래스 로더(Application Class Loader)**:</mark> 
+<mark>3. **애플리케이션 클래스 로더(Application Class Loader)**:</mark> 
     
     자바 프로그램 실행 시 지정한 Classpath에 있는 클래스 파일 혹은 jar에 속한 클래스들을 로드합니다. **쉽게 말하자면, 우리가 만든 .class 확장자 파일을 로드합니다.**
     
     > 시스템 클래스 로더 (System Class Loader) 라고 불리기도 합니다.
     > 
-    <br><br>
+<br>
 
-    ![이미지 2024. 6. 26. 오후 11.39.jpeg](/Java/img/JVM(1).jpeg)
+![이미지 2024. 6. 26. 오후 11.39.jpeg](/Java/img/JVM(1).jpeg)
     
     ✅ 클래스 로드의 단계 
         
@@ -301,27 +298,24 @@ Class Loader ↔ Execution Engine ↔ Runtime Data Area
 ## 3️⃣ Stack Area
         
     💡  스택 영역
-        - ✅ JVM Stacks?
+    - ✅ JVM Stacks?
         ⇒ int, long, boolean 등 기본 자료형을 생성할 때 저장하는 공간. 
             임시적으로 사용되는 변수나 정보들이 저장되는 영역. 
         ⇒ 메소드 호출마다 스택 프레임 (그 메소드 만을 위한 공간)이 생기고 
             현재 실행중인 메소드 안에서 사용되는 값들을 임시로 저장. 
         ⇒ 메소드 수행이 끝나면 스택에서 프레임 별로 삭제. 
-        
         ⇒ 스택 영역은 각 스레드 마다 하나씩 존재하며 스레드가 시작될 때 할당됨. 
         ⇒ 프로세스가 메모리에 로드 될 때 스택 사이즈가 고정되어 있어 런타임 시에 스택 사이즈를 바꿀 수는 없음. 
         ⇒ 만일, 고정된 크기의 JVM 스택에서 프로그램 실행 중 메모리 크기가 충분하지 않다면
             StackOverFlowError가 발생. 
         ⇒쓰레드를 종료하면 런타임 스택도 사라짐.
             
-            ![스크린샷 2024-06-26 오전 12.20.40.png](JVM%20%E1%84%86%E1%85%A6%E1%84%86%E1%85%A9%E1%84%85%E1%85%B5%20%E1%84%80%E1%85%AE%E1%84%8C%E1%85%A9%E1%84%8B%E1%85%A6%20%E1%84%83%E1%85%A2%E1%84%92%E1%85%A2%20%E1%84%89%E1%85%A5%E1%86%AF%E1%84%86%E1%85%A7%E1%86%BC%20%E1%84%92%E1%85%A1%E1%84%89%E1%85%B5%E1%84%8B%E1%85%A9%20(Method%20Area,%2038db2ff4a7a5449c999d28c82c05c97a/%25E1%2584%2589%25E1%2585%25B3%25E1%2584%258F%25E1%2585%25B3%25E1%2584%2585%25E1%2585%25B5%25E1%2586%25AB%25E1%2584%2589%25E1%2585%25A3%25E1%2586%25BA_2024-06-26_%25E1%2584%258B%25E1%2585%25A9%25E1%2584%258C%25E1%2585%25A5%25E1%2586%25AB_12.20.40.png)
-            
-        </aside>
+![스크린샷 2024-06-26 오전 12.20.40.png](/Java/img/JVM(6).png)
         
-    - 4️⃣ PC Register
         
-        <aside>
-        💡 ✅PC Register
+## 4️⃣ PC Register
+        
+💡 ✅PC Register
         
         ⇒ 스레드가 시작될 때 생성됨. (스레드 마다 하나씩 존재)
         ⇒ 현재 수행중인 JVM 명령어 주소를 저장하는 공간. 
@@ -329,18 +323,16 @@ Class Loader ↔ Execution Engine ↔ Runtime Data Area
          
         
         ⭐ 일반적인 프로그램의 실행
-              ⇒ CPU에서 명령어를 수행하는 과정으로 이루어짐. 
+           ⇒ CPU에서 명령어를 수행하는 과정으로 이루어짐. 
         
         JVM은 스택 기반의 가상 머신으로, CPU에 직접 접근하지 않고 Stack에서 Operand(주소)를 뽑아내 가져옵니담. 
         가져온 Operand는 PC Register에 저장됩니다.
         
         따라서, 현재 어떤 명령을 실행해야할 지에 대한 기록을 담당합니다.
+
         
-        </aside>
-        
-    - 5️⃣ Native Method Stack
-        
-        <aside>
+## 5️⃣ Native Method Stack
+
         💡  ✅ 네이티브 메소드 ?
         Native Method Stacks
         ⇒ 자바 프로그램이 컴파일되어 생성되는 바이트 코드가 아닌 실제 실행할 수 있는 기계어로 작성된 프로그램을 실행시키는 영역. 
@@ -353,13 +345,10 @@ Class Loader ↔ Execution Engine ↔ Runtime Data Area
         자바 네이티브 인터페이스를 통해 바이트 코드로 전환하여 저장함. 일반 프로그램처럼 커널이 스택을 잡아 독자적으로 프로그램을 실행시키는 영역임. 이. 부분을 통해 C code를 실행시켜 Kernel에 접근 가능.
         
         Java 이외의 언어에 제공되는 Method의 정보가 저장되는 공간입니다. Java Native Interface를 통해 바이트 코드로 저장. 일반 프로그램과 마찬가지로 Kernel이 자체적으로 Stack을 잡아 독자적으로 프로그램을 실행시키는 영역.
-        
-        </aside>
-        
-    </aside>
     
-    ⇒ 이 때 Method Area, Heap Area는 모든 쓰레드가 공유하는 영역. 
-    ⇒ 나머지는 각 쓰레드 마다 생성되는 개별 영역. 
+
+⇒ 이 때 Method Area, Heap Area는 모든 쓰레드가 공유하는 영역. <br>
+⇒ 나머지는 각 쓰레드 마다 생성되는 개별 영역. 
     
 - ⭐JNI - 네이티브 메소드 인터페이스 (Native Medthod Interface)
     
@@ -369,7 +358,8 @@ Class Loader ↔ Execution Engine ↔ Runtime Data Area
           ⇒ JVM이 다른 Native Method를 적재하고 수행할 수 있도록 함.
     
     </aside>
-    
+<br>
+
 - ⭐네이티브 메소드 라이브러리 (Native Method Library)
     
     <aside>
@@ -378,11 +368,9 @@ Class Loader ↔ Execution Engine ↔ Runtime Data Area
     
     </aside>
     
-
-🌟 Java 는 멀티쓰레드 환경으로 모든 쓰레드는 **Heap, Method Area** 를 공유합니다.             
+<br>
+🌟 Java 는 멀티쓰레드 환경으로 모든 쓰레드는 `Heap, Method Area` 를 공유합니다. <br>         
 이러한 method area가 클래스 데이터를 위한 공간이라면 
-             Heap영역이 객체를 위한 공간. 
-
-              ⇒ HEAP과 마찬가지로gc의 관리 대상에 포함. 
-
-</aside>
+Heap영역이 객체를 위한 공간. 
+<br><br>
+⇒ HEAP과 마찬가지로gc의 관리 대상에 포함. 
