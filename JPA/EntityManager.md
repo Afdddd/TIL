@@ -56,7 +56,7 @@ member.setName("hi");
 > **영속성 컨텍스트에 관리되는 상태**
 > 
 
-![Untitled](/jpa/img/EntityManager(3).png)
+![Untitled](/JPA/img/EntityManager(3).png)
 
 **em.persist(Entity)** : Entiy를 영속성 컨텍스트에 관리
 
@@ -162,7 +162,7 @@ Hibernate:
 
 <br>
 
-![Untitled](/jpa/img/EntityManager(4).png)
+![Untitled](/JPA/img/EntityManager(4).png)
 
 ```java
 tx.begin(); // 트랜잭션 시작
@@ -202,7 +202,7 @@ Member findMember = em.find(Member.class,"member2");
 tx.commit(); // 커밋
 ```
 
-![Untitled](/jpa/img/EntityManager(5).png)
+![Untitled](/JPA/img/EntityManager(5).png)
 
 `member2`가 없으면 DB에서 가져와 1차캐시에 저장하고 또 `member2`가 호출되면 1차캐시에 저장되어있는 `member2`를 반환한다.
 
@@ -226,9 +226,9 @@ System.out.println("result = "+(findMember1 == findMember2)); // true
 영속성 컨텍스트에 변경이 발생했을 때, 바로 데이터베이스로 쿼리를 보내지 않고 SQL 쿼리를 SQL저장소에 모아놨다가, 영속성 컨텍스트가 flush 하는 시점에 모아둔 SQL 쿼리를 데이터베이스로 보내는 기능이다.
 
 
-![Untitled](/jpa/img/EntityManager(6).png)
+![Untitled](/JPA/img/EntityManager(6).png)
 
-![Untitled](/jpa/img/EntityManager(7).png)
+![Untitled](/JPA/img/EntityManager(7).png)
 
 ```java
 tx.begin(); // 트랜잭션 시작
