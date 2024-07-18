@@ -472,3 +472,8 @@ jpa.remove(member) // 삭제
     Team team = member.getTeam;                      FROM MEMBER    
     String teamName = team.getName;                  JOIN TEAM...
     ```
+
+<br><br><br><br><br>
+
+### Reference
+https://www.inflearn.com/course/ORM-JPA-Basic/dashboard
