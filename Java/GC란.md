@@ -85,7 +85,7 @@ GC는 위의 예제 처럼  **“아무런 참조가 되고있지 않은상태�
 <br>
 
 **Root Set이란?**
-
+- Root Set은 Garbage Detection을 마킹하기 위한 출발점이며, Heap 외부에서 내부로 접근한 상태의 참조 값들을 의미. 
 - Method 영역의 정적 변수에 의한 참조
 - Stack영역의  java 메서드 실행 시에 사용하는 지역 변수와 파라미터들에 의한 참조
 - Native Stack 영역의 JNI에 의해 생성된 객체에 대한 참조
