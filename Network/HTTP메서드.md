@@ -226,12 +226,12 @@ Post Redirect Get 패턴으로 Post로 Form을 제출 후 사용자가 페이지
 
 <br>
 
-### **4xx (Client Error)**: 클라이언트 오류를 나타낸다.
+### **4xx (Client Error)**: 클라이언트 오류를 나타낸다. [클라이언트와 관련돼서 중요함]
 
-- `400 Bad Request`: 요청이 잘못되었음을 의미
-- `401 Unauthorized`: 인증이 필요함을 의미
-- `403 Forbidden`: 요청이 서버에서 거부되었음을 의미
-- `404 Not Found`: 요청한 리소스를 찾을 수 없음을 의미
+- `400 Bad Request`: 클라이언트의 잘못된 문법으로 서버가 이해 못함. 요청이 잘못되었음을 의미
+- `401 Unauthorized`: 요청을 위한 권한 인증이 필요함을 의미
+- `403 Forbidden`: 인증은 처리 되었으나, 해당 자원에 대한 인가를 거치지 않은 경우에 대한 응답. 거부처리. 
+- `404 Not Found`: 요청한 URI 리소스를 찾을 수 없음을 의미
 - `405 Method Not Allowed`: 요청된 HTTP 메서드가 허용되지 않음을 의미
 - `409 Conflict`: 요청이 현재 상태와 충돌하여 처리할 수 없음을 의미
 - `429 Too Many Requests`: 클라이언트가 주어진 시간 내에 너무 많은 요청을 보냈음을 의미
