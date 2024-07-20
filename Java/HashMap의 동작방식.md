@@ -296,6 +296,34 @@
 
 <br><br>
 
+## 추가적으로 HashMap에서 동기화를 하려면 ? 
+두 가지 방법을 제안한다 
+- HashTable 
+- ConcurrentHashMap 
+
+## HashTable 
+- HashMap과 유사하나 다른점은 동기화를 보장한다는 점이다. 
+- HashTable 내부는 모두 synchronized란 내용이 작성되어 있다. <br>
+=> 이는 데이터의 여러 작업 (get포함)실행할 때에 다른 스레드의 작업을 block하여 thread-safe를 유지시킨다. 
+
+장점 : 스레드 세이프티 하다는 것. <br>
+단점 : 작업 도중 block을 걸어서 속도 이슈가 생긴다. 
+<br>그리고 null값은 못 넣음 (HashMap은 가능)
+
+## ConcurrentHashMap
+
+Map내에서 사용하는 부분을 여러 segmewnt로 쪼개서 일부에만 block을 걸어줌. <br>
+객체 전체에 block을 거는 HashTable과 달리. 
+
+장점 : HashTable에 비해빠르다. 
+  - HashTable은 A가 작업을 수행하는 동안 B,C,D는 접근 못함. 
+  - ConcurrentHashMap은 A가 데이터를 읽는 동안 B는 데이터를 추가 가능. 
+  <br>이것도 null은 불가하다. 
+
+결론적으로 HashMap이 젤 빠르다. <br>
+단일 쓰레드일 때는 HashMap <br>
+멀티 쓰레드는 ConcurrentHashMap <br>
+HashTable은 ㅎ.. Vector처럼 쓰지말자 ~! 
 
 # 결론
 
@@ -324,6 +352,9 @@ HashMap이 식별자를 구별하는 방법
 - 둘의 hashCode가 같아야 하고 euqals()가 같다면 동일한 식별자라 판단 
 - 해시코드는 무조건 같아야 함. 
 <br><br>
+
++ HashMap은 기본적으로 threadUnSafety 하다. 
+그래서 thread
 
 
 
