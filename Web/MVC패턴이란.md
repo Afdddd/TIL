@@ -2,11 +2,11 @@
 
 ---
 
-### Web 개발의 역사
+### 두둥 Web 개발의 역사
 
-Java 웹 개발의 역사를 보면 Servlet만으로 개발하던 당시에는 Java 코드로 HTML을 표현해야 하기 때문에 번거로움이 있었다. 이런 번거로움을 해결하기 위해 나온 Jsp는 HTML에 Java 코드를 넣어 동적인 페이지를 좀 더 쉽게 개발할 수 있도록 도와주었다. 하지만 Jsp 내에 화면 출력과 비즈니스 코드 수행이라는 많은 역할을 맡아 유지보수가 힘들어지고 프론트와 백엔드가 혼합되어 현업이 힘들다는 단점이 생겼다. 이런 반복적으로 일어나는 문제를 해결하기 위한 디자인 패턴이 개발되었다.
+Java 웹 개발의 역사를 보면 Servlet만으로 개발하던 당시에는 <br><mark>Java 코드로 HTML을 표현해야 하기 때문에 번거로움이 있었다.</mark> <br>이런 번거로움을 해결하기 위해 나온 Jsp는 HTML에 Java 코드를 넣어 동적인 페이지를 좀 더 쉽게 개발할 수 있도록 도와주었다. <br>하지만 <mark>Jsp 내에 화면 출력과 비즈니스 코드 수행이라는 많은 역할을 맡아 유지보수가 힘들어지고 프론트와 백엔드가 혼합되어 현업이 힘들다는 단점이 생겼다.</mark> <br>이런 반복적으로 일어나는 문제를 해결하기 위한 디자인 패턴이 개발되었다.
 
-바로 MVC 패턴이다. 
+바로 <mark>MVC 패턴</mark>이다. 
 
 <br><br>
 
@@ -21,34 +21,38 @@ Model-View-Controller의 약자로 프로그램의 구성요소들을 3개의 �
 - Model
     - 데이터와 비즈니스 로직을 수행하는 역할
     - 데이터의 저장, 검색, 수정, 등 데이터 베이스와의 상호작용을 포함한 핵심 기능
-    - Entity, DAO, 비즈니스 로직 등
+    - `Entity`, `DAO`, `비즈니스 로직` 등
 - View
-    - 사용자에게 보여줄 UI를 보여주는 역할
+    - 사용자에게 보여줄 `UI`를 보여주는 역할
     - Controller로 부터 받은 데이터로 사용자의 요청에 맞는 화면을 표시
     
 - Controller
     - 애플리케이션의 흐름을 제어하는 중심적인 역할
-    - 사용자의 입력을 모델로 전달하고, 모델의 처리 결과를 바탕으로 뷰를 업데이트한다.
+    - `사용자의 입력을 모델로 전달`하고, `모델의 처리 결과를 바탕으로 뷰를 업데이트`한다.
 
 <br>
 
-MVC 패턴의 가장 중요한점은 구성요소들이 독립적으로 역할을 수행해야한다는것이다.
-구성 요소들이 독립적으로 수행하면 결합도는 낮아지고 응집도는 높아진다.
+<span style="color : red;">MVC 패턴의 가장 중요한점</span>은 구성요소들이 `독립적으로 역할을 수행`해야한다는것이다.<br>
+구성 요소들이 독립적으로 수행하면 <mark>결합도는 낮아지고 응집도는 높아진다.</mark>
 
-결합도가 낮아진다? 구성요소들간의 의존도가 낮아진다는 뜻이다. 
-구성요소들의 역할을 명확하게 정의해준다면 한 구성요소가 변경되어도 다른 구성요소에 미치는 영향이 줄어든다는 것이다. 예로 View는 Model의 상태에만 의존하고 있어 Model의 상세 구현이 변경되어도 View에는 영향이 없는 것처럼 말이다.
+✅ 결합도가 낮아진다? <br>
+구성요소들간의 `의존도가 낮아진다`는 뜻이다.  <br>
+구성요소들의 역할을 명확하게 정의해준다면, 한 구성요소가 변경되어도 다른 구성요소에 미치는 영향이 줄어든다는 것이다.<br>
+예로 View는 Model의 상태에만 의존하고 있어 Model의 상세 구현이 변경되어도 View에는 영향이 없는 것처럼 말이다.
 
-반대로 응집도가 높아진다는 뜻은 책임이 높아진다는 뜻이다.
-자신이 부여받은 역할에 맞는 기능만 수행해야한다. 예로 View는 화면을 보여주는 책임에만 집중해야한다.
+✅ 반대로 응집도가 높아진다는 뜻은?<br>
+=> `책임이 높아진다는` 뜻이다.<br><>
+자신이 부여받은 역할에 맞는 기능만 수행해야한다. <Br>
+예로 View는 화면을 보여주는 책임에만 집중해야한다.
 
-이렇게 MVC 패턴을 사용해 결합도가 낮고 응집도가 높은 어플리케이션을 만드면 유지보수가 쉬워지고 확장성이 높아진다.
+이렇게 MVC 패턴을 사용해 결합도가 낮고 응집도가 높은 어플리케이션을 만들면 유지보수가 쉬워지고 확장성이 높아진다.
 
-MVC 패턴은 과거에서부터 현재까지 많은 변화를 거쳐왔다.
+MVC 패턴은 과거에서부터 현재까지 많은 변화를 거쳐왔다.<Br>
 MVC 패턴의 특징에 대해 알아봤으니 이번엔 MVC 패턴의 발전 과정을 알아보자
 
 <br><br>
 
-### MVC1
+### ✅✅MVC1
 
 ![Untitled](/Web/img/mvc(2).png)
 
@@ -58,15 +62,16 @@ MVC1은 이전 글(Jsp란)에서 구현해본 아키텍처이다.
 
 MVC1은 Jsp가 요청을 받아 어떤 페이지를 보여줄지 결정하는 로직(Controller)과 사용자에게 보여줄 화면을 그려(View) 응답해준다.
 
-즉 Jsp가 Controller 역할과 View 역할을 모두 수행한다. 
+즉 <mark>Jsp가 Controller 역할과 View 역할을 모두 수행한다.</mark> 
 
-이렇게 Jsp가 Controller와 View를 모두 수행하면 어플리케이션이 개발되면 될수록 유지보수가 어려워지고 확장성이 떨어질것이다.
+이렇게 Jsp가 Controller와 View를 모두 수행하면 어플리케이션이 개발되면 될수록 <mark>유지보수가 어려워지고 확장성이 떨어질것이다.</mark>
 
-그럼 MVC 패턴이 아니지 않나? 엄밀히 따지면 MVC 패턴을 완전히 따르지 않았지만 후에 등장한 MVC2의 기초를 마련한 것으로, MVC 패턴 발전의 역사적 배경에서 MVC라고 불리게 되었다.
+❓ 그럼 MVC 패턴이 아니지 않나? <br>
+=> 엄밀히 따지면 MVC 패턴을 완전히 따르지 않았지만 후에 등장한 MVC2의 기초를 마련한 것으로, MVC 패턴 발전의 역사적 배경에서 MVC라고 불리게 되었다.
 
 <br><br>
 
-### MVC2
+### ✅✅MVC2
 
 MVC1의 단점을 보안하기 위해 MVC2가 개발되었다.
 
@@ -76,11 +81,16 @@ MVC1의 단점을 보안하기 위해 MVC2가 개발되었다.
 
 Mode View Controller로 구성요소를 나누고 독립적으로 실행한다.
 
-- **사용자 요청 (Request):** 사용자가 웹 브라우저에서 특정 URL로 요청을 보낸다.
-- **컨트롤러 처리 (Controller):** 컨트롤러가 사용자의 요청을 받아 모델을 호출하여 비즈니스 로직을 처리하고, 그 결과를 뷰에 전달한다.
-- **모델 처리 (Model):** 모델이 데이터를 처리하고, 그 결과를 컨트롤러에 반환한다.
-- **뷰 렌더링 (View):** 컨트롤러가 뷰에 모델데이터를 전달하고 뷰가 모델 데이터를 받아 화면을 렌더링한다.
-- **응답 전송 (Response):** 컨트롤러가 뷰에서 렌더링된 결과물을 사용자에게 응답한다.
+- **사용자 요청 (Request):** <br>
+사용자가 웹 브라우저에서 특정 URL로 요청을 보낸다.
+- **컨트롤러 처리 (Controller):** <Br>
+컨트롤러가 사용자의 요청을 받아 모델을 호출하여 비즈니스 로직을 처리하고, 그 결과를 뷰에 전달한다.
+- **모델 처리 (Model):** <Br>
+모델이 데이터를 처리하고, 그 결과를 컨트롤러에 반환한다.
+- **뷰 렌더링 (View):** <Br>
+컨트롤러가 뷰에 모델데이터를 전달하고 뷰가 모델 데이터를 받아 화면을 렌더링한다.
+- **응답 전송 (Response):** <Br>
+컨트롤러가 뷰에서 렌더링된 결과물을 사용자에게 응답한다.
 
 <br>
 
@@ -101,7 +111,7 @@ controller가 많아지면 많아질수록 중복 코드가 많아질것이다.
 
 Spring MVC는 기존 MVC2의 모델을 그대로 가져왔다.
 
-그리고 MVC의 가장 중요한 개념인 관심사의 분리를 Spring의 IoC라는 개념을 통해 더욱 효과적이게 사용할 수 있게 되었다.
+그리고 MVC의 가장 중요한 개념인 관심사의 분리를 `Spring의 IoC`라는 개념을 통해 더욱 효과적이게 사용할 수 있게 되었다.
 
 그리고 MVC2는 디자인 모델이기 때문에 개발자가 직접 구현을 해야한다.
 
@@ -115,6 +125,40 @@ FrontController는 Spring MVC에서 DispatcherServlet으로 구현되어있다.
 
 ![Untitled](/Web/img/mvc(4).png)
 
+<br>
+
+## 클라이언트의 요청(Request)을 처리하는 과정은 다음과 같은 순서로 이루어진다.
+
+
+1. 클라이언트 요청(Request) 처리
+
+    클라이언트에서 HTTP 요청(Request)을 보낸다.
+    DispatcherServlet이 이 요청을 받아들인다.
+
+
+2. HandlerMapping
+
+    DispatcherServlet은 HandlerMapping을 이용해 요청(Request)에 해당하는 Controller를 찾는다.
+
+
+3. Controller 처리
+
+    찾은 Controller는 요청(Request)을 처리하고, 결과를 Model 객체나 ModelAndView 객체에 담아 DispatcherServlet에 반환한다.
+
+
+4. ViewResolver
+
+    DispatcherServlet은 ViewResolver를 이용해 요청(Request)에 해당하는 View를 찾는다.
+
+
+5. View 처리
+
+    찾은 View는 Model 객체나 ModelAndView 객체에 담긴 데이터를 이용하여 클라이언트에게 응답(Response)을 보낸다
+
+
+6. 클라이언트 응답(Response) 처리
+
+    클라이언트는 응답(Response)을 받고, 이를 처리한다.
 
 <br><br><br><br><br>
 
@@ -124,3 +168,4 @@ FrontController는 Spring MVC에서 DispatcherServlet으로 구현되어있다.
 [https://www.inflearn.com/course/lecture?courseSlug=스프링-mvc-1&unitId=71804&tab=curriculum](https://www.inflearn.com/course/lecture?courseSlug=%EC%8A%A4%ED%94%84%EB%A7%81-mvc-1&unitId=71804&tab=curriculum)
 [https://ko.wikipedia.org/wiki/모델-뷰-컨트롤러?source=post_page-----1d74fac6e256--------------------------------#/media/파일:Router-MVC-DB.svg](https://ko.wikipedia.org/wiki/%EB%AA%A8%EB%8D%B8-%EB%B7%B0-%EC%BB%A8%ED%8A%B8%EB%A1%A4%EB%9F%AC?source=post_page-----1d74fac6e256--------------------------------#/media/%ED%8C%8C%EC%9D%BC:Router-MVC-DB.svg)
 [https://en.wikipedia.org/wiki/JSP_model_1_architecture](https://en.wikipedia.org/wiki/JSP_model_1_architecture)
+https://lahezy.tistory.com/64
