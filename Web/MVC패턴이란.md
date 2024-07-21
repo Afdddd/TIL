@@ -95,6 +95,25 @@ controller가 많아지면 많아질수록 중복 코드가 많아질것이다.
 
 ![Untitled](/Web/img/mvc(3).png)
 
+<br>
+
+### Spring MVC
+
+Spring MVC는 기존 MVC2의 모델을 그대로 가져왔다.
+
+그리고 MVC의 가장 중요한 개념인 관심사의 분리를 Spring의 IoC라는 개념을 통해 더욱 효과적이게 사용할 수 있게 되었다.
+
+그리고 MVC2는 디자인 모델이기 때문에 개발자가 직접 구현을 해야한다.
+
+하지만 SpringMVC는 Spring Framework에서 제공하기 때문에 가져다 쓸수있다는 장점이있다.
+
+FrontController는 Spring MVC에서 DispatcherServlet으로 구현되어있다.
+
+그리고 Spring MVC에서는 기존에 Jsp로만 개발하던 당시에는 서블릿이 web.xml이라는 설정파일에서 등록된 서블릿을 찾아 요청을 전달했다면 Spring MVC에서는 어노테이션을 사용해 손쉽게 설정할수있게되었다.
+
+그리고 Spring MVC는 보다 컴포넌트들의 관심사를 분리하였는데 요청 URL을 분석하는 핸들러매핑, 화면을 그려주는 뷰리졸버 등 더욱 컴포넌트들을 관심사를 분리하여 독립적으로 시행 할 수 있게 해준다.
+
+![Untitled](/Web/img/mvc(4).png)
 
 
 <br><br><br><br><br>
