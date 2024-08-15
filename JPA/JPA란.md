@@ -75,8 +75,11 @@ public Member findById(String memberId) throws SQLException {
 
 ### 패러다임의 불일치
 
-“객체 지향 프로그래밍”은 추상화, 캡슐화, 상속, 다형성 등 을 사용하고 
-”관계형 데이터베이스”는 row, table, column, attribute 등을 사용하기 때문에 시스템 간의 차이가 발생한다.
+![패러다임 불일치](https://github.com/user-attachments/assets/db2cfae0-954e-4f34-9dde-04f1f5b53e63)
+
+
+“객체 지향 프로그래밍”은 추상화, 캡슐화, 상속, 다형성 등 을 사용하고 <br>
+”관계형 데이터베이스”는 row, table, column, attribute 등을 사용하기 때문에 시스템 간의 차이가 발생한다.<br>
  이 두 가지가 각각 다른 목표와 구조를 가지고 있기 때문에 여러 가지 문제가 발생한다.
 
 <br>
