@@ -42,6 +42,7 @@ Today I Learned
 - [Network Basic(처리량,트래픽,대역폭,RTT)](/Network/Network%20Basic.md)
 - [Network Topology](/Network/Network%20Topology.md)
 - [HTTP 메서드](/Network/HTTP메서드.md)
+- [RESTful API](/Network/RESTfulAPI란.md)
 
 <br>
 
@@ -63,6 +64,7 @@ Today I Learned
 ## Spring
 - [IoC란?](/Spring/ioc란.md)
 - [DI란?](/Spring/DI란.md)
+- [AOP란?](/Spring/AOP란.md)
 
 
 <br>
@@ -76,4 +78,9 @@ Today I Learned
 ## Git
 - [VCS이란?](/Git/VCS란.md)
 - [Git Branch 전략](/Git/GitBranch전략.md)
+
+<br>
+
+## Design Pattern
+- [Builder패턴](/Design-Pattern/Builder%20패턴.md)
 
