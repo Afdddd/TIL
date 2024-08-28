@@ -1,6 +1,6 @@
 # MSA란
 
-![Untitled](/img/MSA(1).png)
+![Untitled](/Architecture/img/MSA(1).png)
 
 ### 마이크로서비스 아키텍처(Microservice Architecture, MSA)
 
