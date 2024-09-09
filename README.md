@@ -65,6 +65,7 @@ Today I Learned
 - [IoC란?](/Spring/ioc란.md)
 - [DI란?](/Spring/DI란.md)
 - [AOP란?](/Spring/AOP란.md)
+- [@Transactional 옵션](/Spring/@Transactional설정.md)
 
 
 <br>
