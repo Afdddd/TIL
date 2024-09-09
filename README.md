@@ -72,6 +72,7 @@ Today I Learned
 ## JPA
 - [JPA란?](/JPA/JPA란.md)
 - [영속성 컨텍스트란?](/JPA/EntityManager.md)
+- [JPA Entity Listener](/JPA/JPAEntityListener.md)
 
 <br>
 
