@@ -16,6 +16,7 @@ Today I Learned
 - [Jsp란?](Web/Jsp란.md)
 - [MVC패턴이란?](Web/MVC패턴이란.md)
 - [쿠키,세션,JWT](Web/쿠키,세션,JWT.md)
+- [OAuth2.0](/Web/OAuth2.md)
 
 <br>
 
@@ -35,7 +36,7 @@ Today I Learned
 - [Generic이란?](/Java/Generic이란.md)
 - [Java에서 불변객체란? (final)](/Java/Java에서%20불변클래스와%20불변객체%20(final).md)
 - [ArrayList 배열 크기 자동확장](/Java/ArrayList자동확장.md)
-- [Serializabel](/Java/Serializable.md)
+- [Serializable](/Java/Serializable.md)
 <br>
 
 ## CS
