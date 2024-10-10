@@ -62,6 +62,8 @@ Today I Learned
 <br>
 
 ## DB
+- [ACID](/DB/ACID.md)
+- [CAP](/DB/CAP.md)
 - [JDBC란?](/DB/JDBC란.md)
 - [Connection Pool](/DB/Connection%20Pool.md)
 
