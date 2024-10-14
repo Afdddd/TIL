@@ -73,6 +73,7 @@ Today I Learned
 - [CAP](/DB/CAP.md)
 - [JDBC란?](/DB/JDBC란.md)
 - [Connection Pool](/DB/Connection%20Pool.md)
+- [RDB와 NoSQL의 차이](/DB/RDB와%20NoSQL의%20차이.md)
 
 
 <br>
