@@ -44,6 +44,7 @@ Today I Learned
 - [Java에서 불변객체란? (final)](/Java/Java에서%20불변클래스와%20불변객체%20(final).md)
 - [ArrayList 배열 크기 자동확장](/Java/ArrayList자동확장.md)
 - [Serializable](/Java/Serializable.md)
+- [Nested Class](/Java/Nested%20Class.md)
 <br>
 
 ## CS
