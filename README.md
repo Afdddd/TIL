@@ -75,6 +75,7 @@ Today I Learned
 - [JDBC란?](/DB/JDBC란.md)
 - [Connection Pool](/DB/Connection%20Pool.md)
 - [RDB와 NoSQL의 차이](/DB/RDB와%20NoSQL의%20차이.md)
+- [Sequence와 AUTO_INCREMENT](/DB/Sequence%20vs%20AUTO_INCREMENT.md)
 
 
 <br>
