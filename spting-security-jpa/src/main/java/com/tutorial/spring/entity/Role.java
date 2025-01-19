@@ -3,8 +3,10 @@ package com.tutorial.spring.entity;
 import jakarta.persistence.*;
 
 import java.util.Set;
+import lombok.Getter;
 
 @Entity
+@Getter
 public class Role {
 
     @Id
