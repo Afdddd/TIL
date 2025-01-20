@@ -11,6 +11,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
+import org.springframework.web.cors.CorsConfigurationSource;
 
 /**
  * 역할: Spring Security 설정 클래스.
@@ -35,6 +36,9 @@ public class WebSecurityConfig {
   @Autowired
   private CustomAuthenticationEntryPoint customAuthenticationEntryPoint;
 
+  @Autowired
+  private CorsConfigurationSource corsConfigurationSource;
+
   @Bean
   public AuthTokenFilter authenticationJwtTokenFilter() {
     return new AuthTokenFilter();
@@ -55,7 +59,7 @@ public class WebSecurityConfig {
     // Updated configuration for Spring Security 6.x
     http
         .csrf(csrf -> csrf.disable()) // Disable CSRF
-        .cors(cors -> cors.disable()) // Disable CORS (or configure if needed)
+        .cors(cors -> cors.configurationSource(corsConfigurationSource))
         .exceptionHandling(ex ->
             ex.authenticationEntryPoint(customAuthenticationEntryPoint)
         )
