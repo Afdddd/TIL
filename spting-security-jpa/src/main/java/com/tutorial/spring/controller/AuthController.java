@@ -1,9 +1,13 @@
 package com.tutorial.spring.controller;
 
+import com.tutorial.spring.common.ApiResponse;
+import com.tutorial.spring.common.ErrorCode;
 import com.tutorial.spring.entity.User;
 import com.tutorial.spring.repository.UserRepository;
 import com.tutorial.spring.security.JwtTokenProvider;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
@@ -38,10 +42,12 @@ public class AuthController {
   }
 
   @PostMapping("/signup")
-  public String registerUser(@RequestBody User user) {
+  public ResponseEntity<ApiResponse<User>> registerUser(@RequestBody User user) {
+
     if(userRepository.existsByUsername(user.getUsername())) {
-      return "Username is already in use";
+      return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(ApiResponse.error(ErrorCode.USER_NOT_FOUND.getMessage()));
     }
+
 
     User newUser = User.builder()
         .username(user.getUsername())
@@ -49,6 +55,6 @@ public class AuthController {
         .build();
 
     userRepository.save(newUser);
-    return "User registered successfully";
+    return ResponseEntity.ok(ApiResponse.success(newUser, "생성 완료"));
   }
 }
