@@ -30,7 +30,10 @@ public class WebSecurityConfig {
   CustomUserDetailService customUserDetailService;
 
   @Autowired
-  private AuthEntryPointJwt unauthorizedHandler;
+  private CustomAccessDeniedHandler customAccessDeniedHandler;
+
+  @Autowired
+  private CustomAuthenticationEntryPoint customAuthenticationEntryPoint;
 
   @Bean
   public AuthTokenFilter authenticationJwtTokenFilter() {
@@ -53,8 +56,11 @@ public class WebSecurityConfig {
     http
         .csrf(csrf -> csrf.disable()) // Disable CSRF
         .cors(cors -> cors.disable()) // Disable CORS (or configure if needed)
-        .exceptionHandling(exceptionHandling ->
-            exceptionHandling.authenticationEntryPoint(unauthorizedHandler)
+        .exceptionHandling(ex ->
+            ex.authenticationEntryPoint(customAuthenticationEntryPoint)
+        )
+        .exceptionHandling(ex->
+            ex.accessDeniedHandler(customAccessDeniedHandler)
         )
         .sessionManagement(sessionManagement ->
             sessionManagement.sessionCreationPolicy(SessionCreationPolicy.STATELESS)
